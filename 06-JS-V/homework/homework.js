@@ -64,16 +64,27 @@ function agregarStringInvertida() {
       this.apellido = apellido
       this.edad = edad
       this.domicilio = domicilio
-      this.detalle = function() {
-        return { 
-          Nombre: this.nombre,
-          Apellido: this.apellido,
-          Edad: this.edad,
-          Domicilio: this.domicilio
-        }
+
+      //this.detalle = function() {               Podria declarar el metodo dentro de la clase tambien como en el ejemplo pero aqui lo declare afuera como esta abajo y fuera de la clase
+        //return { 
+          //Nombre: this.nombre,
+          //Apellido: this.apellido,
+          //Edad: this.edad,
+          //Domicilio: this.domicilio
+        //}
+        
       }
     }
-  }
+
+  Persona.prototype.detalle = function(){ // el metodo lo declaro fuera de la clase utilizando .prototype (si fuera dentro de la calse no se usa .protoype) pero ambas funcionan
+      return { 
+        Nombre: this.nombre,
+        Apellido: this.apellido,
+        Edad: this.edad,
+        Domicilio: this.domicilio
+      }
+    }
+
 
 
 function crearInstanciaPersona(nombre, apellido, edad, dir) {
